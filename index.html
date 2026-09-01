@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRL Programming Language for LLMs | Founder Pavan Kumar Sadashiv | HRL International</title>
+  
+  <meta name="description" content="Official announcement of HRL (Hierarchical Reasoning Language) for LLMs, engineered by Pavan Kumar Sadashiv at HRL International Private Limited. First-class dual-timescale FeUdal orchestration, reachability safety envelopes, and verifiable AST compiler." />
+  <meta name="author" content="Pavan Kumar Sadashiv" />
+  <link rel="canonical" href="https://hrlpavan.github.io/hrl-international-website-/hrl-lang.html" />
+
+  <!-- Apple SF Pro Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700;800&family=SF+Pro+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <style>
+    :root {
+      --apple-bg: #fbfbfd;
+      --apple-white: #ffffff;
+      --apple-dark: #1d1d1f;
+      --apple-text-dark: #1d1d1f;
+      --apple-text-muted: #86868b;
+      --apple-text-sub: #515154;
+      --apple-border: rgba(0, 0, 0, 0.08);
+      --apple-blue: #0071e3;
+      --apple-blue-hover: #0077ed;
+      --apple-blue-tint: rgba(0, 113, 227, 0.08);
+      --apple-blue-border: rgba(0, 113, 227, 0.25);
+      --hrl-crimson: #d1002d;
+      --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--apple-bg);
+      color: var(--apple-text-dark);
+      line-height: 1.5;
+    }
+
+    /* Top Announcement Ribbon */
+    .apple-ribbon {
+      background: #f5f5f7;
+      border-bottom: 1px solid var(--apple-border);
+      font-size: 12px;
+      color: #515154;
+      text-align: center;
+      padding: 10px 16px;
+      font-weight: 500;
+    }
+    .apple-ribbon a {
+      color: var(--apple-blue);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 4px;
+    }
+
+    /* Global Navigation */
+    .apple-nav {
+      height: 48px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      border-bottom: 1px solid var(--apple-border);
+      display: flex;
+      align-items: center;
+    }
+    .nav-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      opacity: 0.92;
+    }
+    .nav-logo-img {
+      height: 19px;
+      width: auto;
+      max-width: 65px;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      list-style: none;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+    }
+    .nav-links li {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .nav-links a {
+      color: rgba(0, 0, 0, 0.75);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .nav-links a:hover {
+      color: var(--apple-blue);
+    }
+    .nav-links a.active {
+      color: var(--apple-blue);
+      font-weight: 700;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 56px 16px 40px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--apple-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .hero-headline {
+      font-size: clamp(34px, 6vw, 54px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: var(--apple-text-dark);
+      margin-bottom: 14px;
+    }
+    .hero-subhead {
+      font-size: clamp(17px, 3.5vw, 21px);
+      font-weight: 400;
+      color: var(--apple-text-sub);
+      line-height: 1.4;
+      margin-bottom: 28px;
+    }
+
+    /* Apple Keynote Showcase Card (Master Patent Edition Architecture) */
+    .showcase-container {
+      max-width: 1040px;
+      margin: 0 auto 60px;
+      padding: 0 16px;
+    }
+    .keynote-card {
+      background: var(--apple-white);
+      border: 1px solid var(--apple-border);
+      border-radius: 24px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .keynote-top-badge {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding-bottom: 18px;
+    }
+    .badge-pill {
+      background: var(--apple-blue);
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 9999px;
+    }
+    .badge-meta {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--apple-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .spec-id {
+      font-size: 12px;
+      color: var(--apple-text-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* Main Grid */
+    .keynote-content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    /* Left: Tactile Apple Card */
+    .tactile-card {
+      background: linear-gradient(165deg, #ffffff 0%, #f9f9fb 100%);
+      border: 1px solid var(--apple-border);
+      border-left: 5px solid var(--apple-blue);
+      border-radius: 20px;
+      padding: 32px 28px;
+      text-align: left;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+    .tactile-watermark {
+      position: absolute;
+      right: -15px;
+      bottom: -15px;
+      font-size: 84px;
+      font-weight: 900;
+      color: rgba(0, 113, 227, 0.03);
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 113, 227, 0.06);
+      border: 1px solid rgba(0, 113, 227, 0.16);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+    .tag-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--apple-blue);
+    }
+    .tag-text {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--apple-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .card-title {
+      font-size: clamp(26px, 4vw, 32px);
+      font-weight: 800;
+      color: var(--apple-text-dark);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+    }
+    .card-subtitle {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--apple-blue);
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .card-desc {
+      font-size: 13.5px;
+      color: var(--apple-text-sub);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+    .card-author-box {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .author-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--apple-text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .author-role {
+      font-size: 11px;
+      color: var(--apple-text-muted);
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    /* Right: Overview & Features */
+    .overview-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .overview-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--apple-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .overview-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--apple-text-dark);
+      letter-spacing: -0.015em;
+      margin-bottom: 12px;
+    }
+    .overview-narrative {
+      font-size: 13.5px;
+      color: var(--apple-text-sub);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    /* Bullet Grid */
+    .feature-bullet-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 500px) {
+      .feature-bullet-grid { grid-template-columns: 1fr; }
+    }
+    .feature-bullet {
+      background: #f5f5f7;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--apple-text-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .bullet-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--apple-blue);
+      flex-shrink: 0;
+    }
+
+    /* Action Buttons */
+    .action-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn-primary-apple {
+      background: var(--apple-blue);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(0, 113, 227, 0.28);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-primary-apple:hover {
+      background: var(--apple-blue-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(0, 113, 227, 0.38);
+    }
+    .btn-secondary-apple {
+      background: #f5f5f7;
+      border: 1px solid var(--apple-border);
+      color: var(--apple-text-dark);
+      padding: 10px 18px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-secondary-apple:hover {
+      background: #ebebed;
+      border-color: rgba(0, 0, 0, 0.16);
+      color: var(--apple-blue);
+      transform: translateY(-1px);
+    }
+
+    /* Code Playground Section */
+    .code-section {
+      max-width: 1040px;
+      margin: 0 auto 60px;
+      padding: 0 16px;
+    }
+    .code-card {
+      background: #141418;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 24px 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+    }
+    .code-title {
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .code-badge {
+      background: rgba(0, 113, 227, 0.2);
+      color: #2997ff;
+      border: 1px solid rgba(41, 151, 255, 0.3);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+    pre {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.6;
+      color: #e2e8f0;
+      overflow-x: auto;
+    }
+    .kw { color: #ff7b72; font-weight: 600; }
+    .fn { color: #d2a8ff; }
+    .str { color: #a5d6ff; }
+    .num { color: #79c0ff; }
+    .type { color: #ffa657; }
+    .cmt { color: #8b949e; font-style: italic; }
+
+    /* Footer */
+    .apple-footer {
+      background: #f5f5f7;
+      font-size: 11px;
+      color: var(--apple-text-muted);
+      padding: 32px 16px;
+      border-top: 1px solid var(--apple-border);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Ribbon -->
+  <div class="apple-ribbon">
+    HRL International Pvt. Ltd., Mangaluru, India · 
+    <a href="index.html">&larr; Return to Corporate Overview</a>
+  </div>
+
+  <!-- Global Navigation -->
+  <nav class="apple-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand" aria-label="HRL International">
+        <img src="assets/logo.png" alt="HRL Logo" class="nav-logo-img" />
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html#overview">Overview</a></li>
+        <li><a href="hrl-lang.html" class="active">HRL Lang</a></li>
+        <li><a href="https://hrlpavan.github.io/hrl-project-extreme/" target="_blank" rel="noopener noreferrer">Project Extreme</a></li>
+        <li><a href="showcase.html">Showcase</a></li>
+        <li><a href="index.html#production-energy">Production</a></li>
+        <li><a href="index.html#capabilities">Capabilities</a></li>
+        <li><a href="index.html#publication">Publication</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      
+      <a href="https://github.com/hrlpavan/hrl-lang" target="_blank" rel="noopener noreferrer" class="btn-primary-apple" style="padding: 6px 14px; font-size: 12px; min-height: unset;">GitHub Repo &nearr;</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-eyebrow">Official Language Announcement</div>
+    <h1 class="hero-headline">HRL Programming Language for LLMs.</h1>
+    <p class="hero-subhead">A domain-specific, verifiable programming language engineered for dual-timescale hierarchical reasoning, FeUdal multi-agent orchestration, and formal safety reachability envelopes.</p>
+  </section>
+
+  <!-- Apple Master Keynote Showcase Card -->
+  <section class="showcase-container">
+    <div class="keynote-card">
+      
+      <!-- Top Badge Bar -->
+      <div class="keynote-top-badge">
+        <div style="display: inline-flex; align-items: center; gap: 8px;">
+          <span class="badge-pill">Master Specification</span>
+          <span class="badge-meta">Global Language Release · Version 1.0</span>
+        </div>
+        <div class="spec-id">
+          Spec: HRL-SPEC-2026-01 • Author: Pavan Kumar Sadashiv
+        </div>
+      </div>
+
+      <!-- Main Content Grid -->
+      <div class="keynote-content-grid">
+        
+        <!-- Left: Tactile Apple Card -->
+        <div class="tactile-card">
+          <div class="tactile-watermark">HRL</div>
+
+          <div>
+            <div class="card-tag">
+              <span class="tag-dot"></span>
+              <span class="tag-text">The Hierarchical Reasoning Language</span>
+            </div>
+            <h2 class="card-title">HRL LANG</h2>
+            <div class="card-subtitle">Version 1.0 · LLM Agent Specification</div>
+            <p class="card-desc">First-Class FeUdal Networks Dual-Timescale Orchestration, Reachability Safety Envelopes, and Verifiable Multi-Agent Compiler.</p>
+          </div>
+
+          <div class="card-author-box">
+            <div class="author-name">Pavan Kumar Sadashiv (HRL)</div>
+            <div class="author-role">Founder & Managing Director, HRL International Pvt. Ltd.</div>
+          </div>
+        </div>
+
+        <!-- Right: Overview & Features -->
+        <div class="overview-content">
+          <div>
+            <div class="overview-eyebrow">Official Domain-Specific Language for LLMs</div>
+            <h2 class="overview-title">Engineered for Autonomous Agent Fleets & Dual-Timescale Planning</h2>
+            <p class="overview-narrative">
+              Authored and architected by <strong>Pavan Kumar Sadashiv (HRL)</strong>, <em>HRL (Hierarchical Reasoning Language)</em> is the domain-specific programming language engineered specifically for Large Language Models (LLMs), dual-timescale FeUdal macro/micro goal decomposition, symbolic reachability verification (<i>R<sub>c</sub></i>(<i>s</i>)), typed tool execution contracts, and async multi-agent rollouts.
+            </p>
+
+            <!-- Key Bullet Grid -->
+            <div class="feature-bullet-grid">
+              <div class="feature-bullet">
+                <span class="bullet-dot"></span>
+                <span>Dual-Timescale FeUdal Primitives (C=8)</span>
+              </div>
+              <div class="feature-bullet">
+                <span class="bullet-dot"></span>
+                <span>Formal Reachability Envelopes Rc(s)</span>
+              </div>
+              <div class="feature-bullet">
+                <span class="bullet-dot"></span>
+                <span>First-Class Manager / Worker Primitives</span>
+              </div>
+              <div class="feature-bullet">
+                <span class="bullet-dot"></span>
+                <span>Typed Tool Contracts with Guards</span>
+              </div>
+              <div class="feature-bullet">
+                <span class="bullet-dot"></span>
+                <span>Zero Out-of-Distribution Invariant Verifier</span>
+              </div>
+              <div class="feature-bullet">
+                <span class="bullet-dot"></span>
+                <span>Native Async Python 3.11+ Transpiler</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-group">
+            <a href="https://github.com/hrlpavan/hrl-lang" target="_blank" rel="noopener noreferrer" class="btn-primary-apple">
+              <span>Explore GitHub Repository</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://github.com/hrlpavan/hrl-lang/blob/main/HRL_EXTREME_COMMANDS.md" target="_blank" rel="noopener noreferrer" class="btn-secondary-apple">
+              <span>View Extreme Commands Manual &nearr;</span>
+            </a>
+            <a href="https://hrlpavan.github.io/hrl-project-extreme/" target="_blank" rel="noopener noreferrer" class="btn-secondary-apple">
+              <span>Launch Live Theater &rarr;</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Live HRL Code Syntax Showcase -->
+  <section class="code-section">
+    <div class="code-card">
+      <div class="code-header">
+        <div class="code-title">
+          <span>EnterpriseDeepResearcher.hrl</span>
+          <span class="code-badge">HRL SPEC v1.0</span>
+        </div>
+        <div style="font-size: 11px; color: #8b949e; font-family: var(--font-mono);">
+          100% Verifiable AST Grammar
+        </div>
+      </div>
+      <pre><code><span class="cmt">// Enterprise Deep Research in HRL</span>
+<span class="kw">module</span> <span class="type">EnterpriseResearchOrchestrator</span>
+
+<span class="kw">tool</span> <span class="fn">SearchEngine</span>(query: <span class="type">String</span>, max_results: <span class="type">Int</span> = <span class="num">5</span>) -> <span class="type">Array</span>&lt;<span class="type">String</span>&gt; {
+    <span class="kw">guard:</span> <span class="fn">length</span>(query) > <span class="num">3</span>;
+    <span class="kw">timeout:</span> <span class="num">5000ms</span>;
+}
+
+<span class="kw">manager</span> <span class="type">StrategicResearchPlanner</span> {
+    <span class="kw">model:</span> <span class="str">"gemini-2.5-pro"</span>;
+    <span class="kw">dilation:</span> <span class="num">8</span>; <span class="cmt">// Macro dilation horizon</span>
+
+    <span class="kw">goal</span> <span class="fn">MarketAnalysis</span>(company: <span class="type">String</span>) {
+        <span class="kw">invariant:</span> company != <span class="str">""</span>;
+        <span class="kw">subgoal</span> BackgroundResearch     -> <span class="str">"Retrieve official enterprise filings and structure"</span>;
+        <span class="kw">subgoal</span> CompetitorBenchmarking -> <span class="str">"Analyze top industry rivals and pricing models"</span>;
+        <span class="kw">subgoal</span> ValuationSynthesis       -> <span class="str">"Synthesize growth trajectory and revenue multiples"</span>;
+    }
+}
+
+<span class="kw">worker</span> <span class="type">TacticalResearcher</span> <span class="kw">for</span> <span class="type">StrategicResearchPlanner</span> {
+    <span class="kw">model:</span> <span class="str">"gemini-2.5-flash"</span>;
+    <span class="kw">tools:</span> [<span class="fn">SearchEngine</span>];
+
+    <span class="kw">policy</span> {
+        <span class="kw">on</span> <span class="kw">subgoal</span>(BackgroundResearch) {
+            <span class="kw">let</span> docs = <span class="kw">execute</span> <span class="fn">SearchEngine</span>(query: <span class="str">"Company 10-K SEC filings"</span>, max_results: <span class="num">5</span>);
+            <span class="kw">verify</span> reachability.contains_verified_sources(docs);
+            <span class="kw">emit</span> research_stage_done(docs);
+        }
+    }
+}
+
+<span class="kw">pipeline</span> <span class="fn">RunResearch</span>(company_name: <span class="type">String</span> = <span class="str">"HRL International Pvt. Ltd."</span>) {
+    <span class="kw">let</span> planner = <span class="kw">spawn</span> <span class="type">StrategicResearchPlanner</span>();
+    <span class="kw">let</span> result = <span class="kw">execute</span> planner.<span class="fn">MarketAnalysis</span>(company: company_name);
+    <span class="kw">return</span> result;
+}</code></pre>
+    </div>
+  </section>
+
+  <!-- Apple Footer -->
+  <footer class="apple-footer">
+    <div style="max-width: 1040px; margin: 0 auto;">
+      Copyright &copy; 2026 HRL International Private Limited. All rights reserved. Sovereign Intellectual Property of Pavan Kumar Sadashiv (Founder & Managing Director).
+    </div>
+  </footer>
+
+</body>
+</html>
