@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patent Specification: HRL Programming Language for LLMs | Pavan Kumar Sadashiv</title>
+  <meta name="description" content="Formal Master Patent Specification and Intellectual Property Disclosure for the HRL (Hierarchical Reasoning Language) for LLMs by Pavan Kumar Sadashiv (HRL International Pvt. Ltd.)." />
+  <meta name="author" content="Pavan Kumar Sadashiv" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700;800&family=SF+Pro+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
+  <style>
+    :root {
+      --apple-bg: #fbfbfd;
+      --apple-text: #1d1d1f;
+      --apple-sub: #515154;
+      --apple-blue: #0071e3;
+      --apple-border: rgba(0, 0, 0, 0.08);
+      --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--apple-bg);
+      color: var(--apple-text);
+      line-height: 1.6;
+      padding: 40px 16px;
+    }
+    .patent-sheet {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--apple-border);
+      border-radius: 20px;
+      padding: 48px 40px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+    }
+    .patent-header {
+      border-bottom: 2px solid #1d1d1f;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    .patent-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .badge-patent {
+      background: #0071e3;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .patent-title {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .patent-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      background: #f5f5f7;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin-bottom: 32px;
+    }
+    .meta-item strong { color: #1d1d1f; }
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1d1d1f;
+      border-bottom: 1px solid var(--apple-border);
+      padding-bottom: 6px;
+      margin: 28px 0 14px;
+    }
+    p, li {
+      font-size: 14px;
+      color: var(--apple-sub);
+      margin-bottom: 12px;
+    }
+    ul, ol { padding-left: 20px; margin-bottom: 16px; }
+    .claim-box {
+      background: #fbfbfd;
+      border: 1px solid var(--apple-border);
+      border-left: 4px solid #0071e3;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      font-size: 13.5px;
+    }
+    .claim-box strong { color: #1d1d1f; }
+    .signature-box {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--apple-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="patent-sheet">
+    <div class="patent-header">
+      <div class="patent-badge-row">
+        <span class="badge-patent">Formal Patent Specification</span>
+        <span style="font-family: var(--font-mono); font-size: 12px; color: #86868b;">HRL-PATENT-SPEC-2026-004-LANG</span>
+      </div>
+      <h1 class="patent-title">System, Method, and Domain-Specific Hierarchical Reasoning Language (HRL) for Dual-Timescale LLM Agent Fleet Orchestration, Symbolic Reachability Envelopes, and Verifiable Compiler Synthesis</h1>
+    </div>
+
+    <div class="patent-meta-grid">
+      <div class="meta-item"><strong>Sole Inventor:</strong> Pavan Kumar Sadashiv</div>
+      <div class="meta-item"><strong>Assignee:</strong> HRL International Private Limited</div>
+      <div class="meta-item"><strong>Jurisdictions:</strong> IPO / PCT / USPTO / EPO</div>
+      <div class="meta-item"><strong>IPC Class:</strong> G06N 3/00, G06F 8/40, G06N 20/00</div>
+    </div>
+
+    <h2 class="section-title">1. Abstract of the Disclosure</h2>
+    <p>A computer-implemented system, method, grammar, and verifiable compiler for executing and transpiling a domain-specific Hierarchical Reasoning Language (HRL) optimized for Large Language Models (LLMs) and autonomous multi-agent fleets. The invention introduces first-class linguistic primitives for dual-timescale FeUdal Networks (FuN) macro-goal and micro-action decomposition across dilated temporal horizons (C &ge; 2), formal symbolic reachability safety envelopes (Rc(s)) enforcing runtime guard invariants, typed tool execution contracts, and a deterministic transpilation toolchain that transforms declarative agent hierarchies into asynchronous Directed Acyclic Graphs (DAGs) in target runtime environments (such as Python 3.11+ asyncio). The system eliminates out-of-distribution hallucinations, unbounded reasoning recursion loops, and untyped execution side-effects inherent in conventional natural language prompt chaining frameworks.</p>
+
+    <h2 class="section-title">2. Master Patent Claims (Claims 1 to 20)</h2>
+
+    <div class="claim-box">
+      <strong>Claim 1 (Independent System Claim):</strong> A computer-implemented system for compiling and executing hierarchical multi-agent reasoning programs for large language models (LLMs), comprising memory and at least one processor configured to execute a lexer and parser, an AST Construction Engine, a Type and Reachability Checker, and an Asynchronous Multi-Agent Execution Engine configured to instantiate a Manager agent at a dilated macro-timescale C &ge; 2 and execute tactical subgoals across Worker agents at single-step timescale with tool guard invariants.
+    </div>
+
+    <div class="claim-box">
+      <strong>Claim 2:</strong> The system of claim 1, wherein said parser recognizes native duration literals specified in milliseconds (ms) and seconds (s) and compiles them into asynchronous execution timeout boundaries.
+    </div>
+
+    <div class="claim-box">
+      <strong>Claim 3:</strong> The system of claim 1, wherein said Manager agent operates with a temporal dilation factor C=8, generating macro-subgoals that remain active across C discrete execution steps.
+    </div>
+
+    <div class="claim-box">
+      <strong>Claim 4:</strong> The system of claim 1, wherein said Worker agent receives an intrinsic reward ri computed as the cosine similarity between the state transition difference vector and the manager goal vector.
+    </div>
+
+    <div class="claim-box">
+      <strong>Claim 5:</strong> The system of claim 1, wherein said Tool contract enforces compile-time and runtime pre-condition guard expressions, whereby if a guard expression evaluates to false, tool execution is aborted prior to external network dispatch.
+    </div>
+
+    <div class="claim-box">
+      <strong>Claim 7 (Independent Method Claim):</strong> A computer-implemented method for verifying and executing hierarchical LLM multi-agent programs, comprising receiving source code in a domain-specific hierarchical reasoning language, tokenizing into typed tokens, constructing an AST, validating tool contracts and reachability assertions, transpiling into asynchronous Python 3.11+ coroutines, and executing concurrent agent reasoning tasks within verified safety envelopes.
+    </div>
+
+    <div class="claim-box">
+      <strong>Claim 14 (Independent Storage Medium Claim):</strong> A non-transitory computer-readable storage medium storing instructions for scanning HRL programs, constructing an AST, verifying tool guards and reachability invariants, and dynamically executing dual-timescale hierarchical agent clusters while preventing out-of-distribution hallucinations.
+    </div>
+
+    <div class="signature-box">
+      <div>
+        <div style="font-weight: 700; color: #1d1d1f; text-transform: uppercase;">Pavan Kumar Sadashiv (HRL)</div>
+        <div style="font-size: 12px; color: #86868b;">Sole Patent Inventor & Managing Director</div>
+        <div style="font-size: 12px; color: #86868b;">HRL International Private Limited (Mangaluru, India)</div>
+      </div>
+      <div style="font-size: 12px; color: #86868b; text-align: right;">
+        Official IP Record · September 1, 2026<br/>
+        <a href="https://github.com/hrlpavan/hrl-lang" target="_blank" style="color: #0071e3; text-decoration: none; font-weight: 600;">github.com/hrlpavan/hrl-lang &nearr;</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
