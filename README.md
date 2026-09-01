@@ -2,12 +2,14 @@
 
 **Hierarchical Reasoning Language (HRL)** is a domain-specific, verifiable programming language engineered specifically for **Large Language Models (LLMs), Autonomous Multi-Agent Orchestration, and Antigravity Systems**.
 
-> **Designed by Pavan Kumar Sadashiv**  
-> *Founder & Managing Director, HRL International Private Limited™*
+> **Sole Patent Inventor**: **Pavan Kumar Sadashiv**  
+> **Assignee**: **HRL International Private Limited**  
+> **Master Patent Specification**: [`PATENT_SPECIFICATION_HRL_LANG.md`](PATENT_SPECIFICATION_HRL_LANG.md) • **Spec ID**: `HRL-PATENT-SPEC-2026-004-LANG`  
+> **Filing Jurisdictions**: IPO / PCT / USPTO / EPO (IPC: `G06N 3/00`, `G06F 8/40`, `G06N 20/00`)
 
 ---
 
-## 🚀 Key Language Primitives
+## Key Language Primitives
 
 1. **Dual-Timescale Reasoning (FeUdal Networks Macro/Micro)**:
    - `manager`: High-level reasoning orchestrator generating sub-goals over dilated horizons ($C=8$).
@@ -23,7 +25,7 @@
 
 ---
 
-## 💻 Code Example (`.hrl`)
+## Code Example (`.hrl`)
 
 ```hrl
 // Enterprise Deep Research in HRL
