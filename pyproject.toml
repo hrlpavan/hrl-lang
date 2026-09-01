@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hrl-lang"
+version = "1.0.0"
+description = "HRL (Hierarchical Reasoning Language) - A Domain-Specific Programming Language for LLMs, Multi-Agent Systems, and Antigravity."
+authors = [
+  { name="Pavan Kumar Sadashiv", email="support@hrlinternational.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+hrl = "hrl.cli:main"
+hrlc = "hrl.cli:main"
